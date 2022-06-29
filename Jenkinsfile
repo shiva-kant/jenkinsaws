@@ -16,7 +16,7 @@ pipeline {
                     echo 'Hello';
                     }
             }
-                stage('V1'){
+                stage('V2'){
                      agent{label 'L2'}
                     steps{
                     
