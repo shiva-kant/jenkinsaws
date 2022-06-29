@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'Hello from Git Again '
+                echo 'Hello from Git to Jenkins'
             }
         }
     }
