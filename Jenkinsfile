@@ -1,29 +1,31 @@
 pipeline {
     agent none
     stages {
-        stage('test') {
+        stage('seq') {
             agent{label 'L1'}
             steps {
                 echo 'Testing'
             }
         }
-        stage('build') {
-            agent{label 'L2'}
-            steps {
-                echo 'Building'
+        stage('parallel') {
+            parallel{
+                stage('V1')   {
+                     agent{label 'L2'}
+                    steps{
+                    
+                    echo 'Hello';
+                    }
             }
-        }
-        stage('Deploye') {
-            agent{label 'L1'}
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('run') {
-            agent{label 'L2'}
-            steps {
-                echo 'running'
-            }
+                stage('V1'){
+                     agent{label 'L2'}
+                    steps{
+                    
+                    echo 'V2';
+                    }
+                    
+                }
         }
     }
 }
+    
+    
