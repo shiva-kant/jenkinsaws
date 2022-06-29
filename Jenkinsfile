@@ -1,9 +1,16 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('build') {
+            agent{label 'L1'}
             steps {
-                echo 'Hello from Git to Jenkins'
+                echo 'Building'
+            }
+        }
+        stage('deploy') {
+            agent{label 'L2'}
+            steps {
+                echo 'Deployinh'
             }
         }
     }
