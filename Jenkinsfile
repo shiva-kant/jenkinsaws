@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'Hello from Git Done'
+                echo 'Hello from Git '
             }
         }
     }
